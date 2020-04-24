@@ -1,3 +1,3 @@
 #### Kontakt info
 
-Kontakt info för den som önskar
+TODO: Kontakt info för den som önskar

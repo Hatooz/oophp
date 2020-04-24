@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Configuration file for page which can create and put together web pages
  * from a collection of views. Through configuration you can add the
@@ -36,8 +37,8 @@ return [
             "template" => "anax/v2/header/site_logo",
             "data" => [
                 "class" => "large",
-                "siteLogo"      => "image/theme/leaf_256x256.png",
-                "siteLogoAlt"   => "Löv",
+                "siteLogo"      => "",
+                "siteLogoAlt"   => "",
             ],
         ],
         [
@@ -45,7 +46,7 @@ return [
             "template" => "anax/v2/header/site_logo_text",
             "data" => [
                 "homeLink"      => "",
-                "siteLogoText"  => "oophp",
+                "siteLogoText"  => "",
                 "siteLogoTextIcon" => "image/theme/leaf_40x40.png",
                 "siteLogoTextIconAlt" => "Löv-bild",
             ],
