@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Supply the basis for the navbar as an array.
  */
@@ -6,7 +7,7 @@ return [
     // Use for styling the menu
     "wrapper" => null,
     "class" => "my-navbar rm-default rm-desktop",
- 
+
     // Here comes the menu items
     "items" => [
         [
@@ -67,6 +68,11 @@ return [
             "text" => "Guess game",
             "url" => "guess-game",
             "title" => "Giss mitt nummer",
+        ],
+        [
+            "text" => "T 100 game",
+            "url" => "dice-game",
+            "title" => "t100",
         ],
     ],
 ];
