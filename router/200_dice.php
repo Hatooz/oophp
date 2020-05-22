@@ -72,9 +72,5 @@ $app->router->post("dice/play", function () use ($app) {
         $game->checkWin();
     }
 
-
-
-
-
     return $app->response->redirect("dice/play");
 });

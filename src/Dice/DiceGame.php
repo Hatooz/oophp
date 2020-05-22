@@ -64,12 +64,48 @@ class DiceGame
         }
     }
 
+    public function getHumanPoints()
+    {
+        return $this->player1->currentPoints;
+    }
+
+    public function getComputerPoints()
+    {
+        return $this->player2->currentPoints;
+    }
+
+    public function computerIntelligence()
+    {
+        $humanPoints = $this->getHumanPoints();
+        $computerPoints = $this->getComputerPoints();
+
+        if (((100 - $computerPoints) > 50) && ((100 - $humanPoints) < 20)) {
+            return "high";
+        }
+
+        if (($humanPoints - $computerPoints) > 30) {
+            return "medium";
+        }
+
+        return false;
+    }
+
     public function computerTurn()
     {
         if ($this->getActivePlayer()->name == "computer") {
             $this->computerFail = null;
             $this->computerSuccess = null;
-            while ($this->getActivePlayer()->unsavedPoints < 17) {
+            $lowRisk = 10;
+            $mediumRisk = 20;
+            $highRisk = 50;
+            $riskLevel = $lowRisk;
+            if ($this->computerIntelligence() == "high") {
+                $riskLevel = $highRisk;
+            } elseif ($this->computerIntelligence() == "medium") {
+                $riskLevel = $mediumRisk;
+            }
+
+            while ($this->getActivePlayer()->unsavedPoints < $riskLevel) {
                 $throw = new DiceHand();
                 $throw->rolls();
                 $throwVals = $throw->values();

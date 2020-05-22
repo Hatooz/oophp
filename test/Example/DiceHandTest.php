@@ -42,4 +42,21 @@ class DiceHandTest extends TestCase
         $res = $hand->values() == $hand->values;
         $this->assertTrue($res);
     }
+
+    public function testAverageTyp()
+    {
+        $hand = new DiceHand();
+        $hand->rolls();
+        $res = gettype($hand->average());
+        $exp = "double";
+        $this->assertEquals($res, $exp);
+    }
+    public function testSumTypee()
+    {
+        $hand = new DiceHand();
+        $hand->rolls();
+        $res = gettype($hand->sum());
+        $exp = "integer";
+        $this->assertEquals($res, $exp);
+    }
 }

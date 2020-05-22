@@ -39,6 +39,7 @@ class DiceGameTest extends TestCase
         $exp = $game->player2;
         $this->assertEquals($exp, $activeAfterStop);
     }
+
     public function testThrow()
     {
         $game = new DiceGame("Hatem", "Computer");
@@ -48,5 +49,32 @@ class DiceGameTest extends TestCase
         $game->throwDice();
         $res = $game->getActivePlayer() != $activeBeforeStop || $game->player1->unsavedPoints != 0;
         $this->assertTrue($res);
+    }
+    public function testIntelligenceHigh()
+    {
+        $game = new DiceGame("Hatem", "Computer");
+        $game->player1->currentPoints = 90;
+        $game->player2->currentPoints = 10;
+        $computerIntellect = $game->computerIntelligence();
+        $exp = "high";
+        $this->assertEquals($exp, $computerIntellect);
+    }
+    public function testIntelligenceMedium()
+    {
+        $game = new DiceGame("Hatem", "Computer");
+        $game->player1->currentPoints = 40;
+        $game->player2->currentPoints = 9;
+        $computerIntellect = $game->computerIntelligence();
+        $exp = "medium";
+        $this->assertEquals($exp, $computerIntellect);
+    }
+    public function testIntelligenceLow()
+    {
+        $game = new DiceGame("Hatem", "Computer");
+        $game->player1->currentPoints = 10;
+        $game->player2->currentPoints = 9;
+        $computerIntellect = $game->computerIntelligence();
+        $exp = false;
+        $this->assertEquals($exp, $computerIntellect);
     }
 }

@@ -42,7 +42,7 @@ $app->router->get("guess/play", function () use ($app) {
     //     $game = new Hami\Guess\Guess();
     //     $res = $game->makeGuess($guess);
     // } catch (GuessException $e) {
-    //     $res = "Guess has to be between 1 and 100";    
+    //     $res = "Guess has to be between 1 and 100";
     // }
     $data = [
         "guess" => $guess ?? null,
