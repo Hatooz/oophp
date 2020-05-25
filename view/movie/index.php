@@ -172,7 +172,8 @@ switch ($route) {
         $movie = $movie[0];
         break;
 
-    default:;
+    default:
+        echo 'default case';
 };
 
 // Render the page
