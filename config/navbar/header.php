@@ -79,5 +79,15 @@ return [
             "url" => "movie",
             "title" => "Movies",
         ],
+        [
+            "text" => "Textfilter",
+            "url" => "textfilter",
+            "title" => "textfilter",
+        ],
+        [
+            "text" => "Content",
+            "url" => "content-landing",
+            "title" => "Content",
+        ],
     ],
 ];
